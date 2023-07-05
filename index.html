@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/countdownTimer.js" defer></script>
+    <link rel="stylesheet" href="./css/countdown-timer.css">
+    <title>Countdown timer</title>
+
+    <style>
+        .countdown-timer {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .date-select {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Countdown example</h1>
+    <div class="date-select">
+        <label for="date">Select end date</label>
+        <input type="date" name="date" id="date">
+    </div>
+    <div class="countdown-timer" data-count-down-to="" data-countdown-timer>
+        <div class="countdown-timer__time-holder">
+            <div class="countdown-timer__time" data-days>00</div>
+            <span>Days</span>
+        </div>
+        <div class="countdown-timer__time-holder">
+            <div class="countdown-timer__time" data-hours>00</div>
+            <span>Hours</span>
+        </div>
+        <div class="countdown-timer__time-holder">
+            <div class="countdown-timer__time" data-minutes>00</div>
+            <span>Minutes</span>
+        </div>
+        <div class="countdown-timer__time-holder">
+            <div class="countdown-timer__time" data-seconds>00</div>
+            <span>Seconds</span>
+        </div>
+    </div>
+
+    <script>
+        const dateInput = document.getElementById("date");
+
+        dateInput.addEventListener("change", () => {
+            document.querySelector("[data-countdown-timer]").dataset.countDownTo = dateInput.value;
+
+            countDownTimer();
+        })
+    </script>
+</body>
+
+</html>

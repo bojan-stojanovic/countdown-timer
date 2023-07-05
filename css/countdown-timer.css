@@ -1,0 +1,10 @@
+.countdown-timer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+}
+
+.countdown-timer__time-holder {
+    text-align: center;
+    background-color: #eee;
+}
